@@ -1,0 +1,18 @@
+<nz-ribbon class="custom-w" [nzText]="displayMessage(item)"
+    [nzColor]="item.completed ? 'green' : checkPastDue(item) ? 'red' : '#2db7f5'">
+    <nz-card class="card" [nzTitle]="item.title" [nzExtra]="extraTemplate">
+        <p>{{item.dueDate}}</p>
+
+        <button nz-button  nzShape="circle" [ngStyle]="{'background-color':item.completed== false ? '#1890ff' : '#52c41a' }"
+            (click)="onCheckboxChange(!item.completed,item)"
+            [nzTooltipTitle]="item.completed== false ? 'Complete' : 'Set Pending'" nzTooltipPlacement="bottom"
+            nz-tooltip>
+            <span nz-icon [nzType]="'check'" [ngStyle]="{'color':'#fff' }" ></span>
+        </button>  
+       
+    </nz-card>
+    <ng-template #extraTemplate>
+        <span class="delete-item-icon" nz-icon [nzType]="'delete'" (click)="onDeleteTodo.emit(item.id)" [nzTheme]="'outline'"
+            nzTooltipTitle="Delete" nzTooltipPlacement="bottom" nz-tooltip></span>
+    </ng-template>
+</nz-ribbon>

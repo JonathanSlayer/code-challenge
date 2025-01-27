@@ -1,0 +1,9 @@
+<form nz-form [nzLayout]="'inline'">
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input a Todo!">
+        <nz-input-group nzPrefixIcon="contacts">
+          <input [formControl]="searchControl" nz-input placeholder="Search Todo" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>  
+</form>

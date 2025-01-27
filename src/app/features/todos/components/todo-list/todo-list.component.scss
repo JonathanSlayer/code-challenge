@@ -1,0 +1,20 @@
+:host {
+    .list-container {
+        overflow-y: auto;
+        height: calc(100% - 80px);
+        display: flex;
+        flex-wrap: wrap;       
+        padding-top: 1em;
+        gap: 1em;
+    }
+
+    .create-todo {       
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}
+
+.hide{
+    display: none;
+}

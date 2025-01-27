@@ -1,0 +1,13 @@
+:host{
+    .custom-w{
+        width:20em;
+        margin-bottom: 1em;
+        display: inline-block;
+    }
+
+    .delete-item-icon{
+        transform: translateY(15px);
+        cursor: pointer;
+    }
+  
+}

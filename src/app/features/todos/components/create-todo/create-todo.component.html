@@ -1,0 +1,19 @@
+<form nz-form [nzLayout]="'inline'" [formGroup]="createForm" (ngSubmit)="create()">
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input a Todo!">
+        <nz-input-group nzPrefixIcon="contacts">
+          <input formControlName="title" nz-input placeholder="New Todo" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control [nzErrorTip]="validatorMessage()">
+        <nz-date-picker formControlName="dueDate" [nzPlaceHolder]="'Select a due date'"></nz-date-picker>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control>
+        <button nz-button nzType="primary" [disabled]="!createForm.valid">Create new</button>
+      </nz-form-control>
+    </nz-form-item>
+</form>
