@@ -26,11 +26,13 @@ export const TodoReducer = createReducer(
 
   // Complete
   on(completeTodo, (state) => ({ ...state, isLoading: true })),
-  on(completeTodoSuccess, (state, { todo }) => ({ ...state, todoList: state.todoList.map(item => item.id === todo.id ? todo: item), isLoading: false, error: null })),
+  on(completeTodoSuccess, (state, { todo }) => (
+    { ...state, todoList: state.todoList.map(item => item.id === todo.id ? todo: item), isLoading: false, error: null }
+  )),
 
   // Delete
   on(deleteTodo, (state) => ({ ...state, isLoading: true })),
-  on(deleteTodoSuccess, (state, { todoId }) => ({ ...state, todoList: state.todoList.filter(todo => todo.id != todoId), isLoading: false, error: null })),
-
-
+  on(deleteTodoSuccess, (state, { todoId }) => (
+    { ...state, todoList: state.todoList.filter(todo => todo.id != todoId), isLoading: false, error: null }
+  ))
 );

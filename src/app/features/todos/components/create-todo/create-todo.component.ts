@@ -18,8 +18,7 @@ export class CreateTodoComponent implements OnInit {
     this.createForm = this.fb.group({
       title: this.fb.control('', [Validators.required]),
       // dueDate: this.fb.control('', [Validators.required, noPastDatesValidator()]),
-      dueDate: this.fb.control('', [Validators.required]),
-      completed: this.fb.control(false)    
+      dueDate: this.fb.control('', [Validators.required])        
     });
   }
 

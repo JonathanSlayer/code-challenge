@@ -10,4 +10,4 @@ export function noPastDatesValidator(): ValidatorFn {
   
       return selectedDate < today ? { pastDate: true } : null;
     };
-  }
+}

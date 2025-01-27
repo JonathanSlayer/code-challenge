@@ -8,7 +8,6 @@ import { ITodo } from '../../models/todo.model';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TodoItemComponent {
-
   @HostBinding('style.height') height = '13em';
   @Input() item: ITodo;
   @Output() onDeleteTodo = new EventEmitter<number>();
@@ -26,5 +25,4 @@ export class TodoItemComponent {
   checkPastDue(todo: ITodo){
     return todo.dueDate < new Date();
   }
-
 }

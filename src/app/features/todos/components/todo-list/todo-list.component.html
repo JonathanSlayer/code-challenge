@@ -5,7 +5,7 @@
 
 <div class="list-container" *ngIf="todos$ | async as data">
     <app-loading [ngClass]="{ 'hide': !(loading$ | async) }"></app-loading>
-    <app-todo-item (onCompleteTodo)="onCompleteTodo($event)" (onDeleteTodo)="onDeleteTodo($event)"
+    <app-todo-item class="grid-item" (onCompleteTodo)="onCompleteTodo($event)" (onDeleteTodo)="onDeleteTodo($event)"
         *ngFor="let task of data" [item]="task">
     </app-todo-item>
 </div>

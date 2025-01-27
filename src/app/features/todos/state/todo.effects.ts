@@ -6,7 +6,6 @@ import { of } from 'rxjs';
 import { TodoService } from '../services/todo/todo.service';
 import { ITodo } from '../models/todo.model';
 
-
 @Injectable()
 export class TodoEffects {
     private actions$ = inject(Actions);
@@ -30,8 +29,7 @@ export class TodoEffects {
 
     searchTodo$ = createEffect(() =>
         this.actions$.pipe(
-            ofType(searchTodoData),
-            debounceTime(300),
+            ofType(searchTodoData),            
             switchMap(({ search }) =>
                 this.todoService.searchTodo(search).pipe(
                     map((todos:ITodo[]) => 
@@ -54,7 +52,6 @@ export class TodoEffects {
             )
         )
     );
-
 
     completeTodo$ = createEffect(() =>
         this.actions$.pipe(

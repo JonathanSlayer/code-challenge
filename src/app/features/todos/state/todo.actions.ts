@@ -19,7 +19,6 @@ export const searchTodosSuccess = createAction('[Todo] Search todos success', pr
 export const createTodo = createAction('[Todo] Create todo', props<{ todo: ITodo }>());
 export const createTodoSuccess = createAction('[Todo] Create todo success', props<{ todo: ITodo }>());
 
-
 //Delete
 export const deleteTodo = createAction('[Todo] Delete todo', props<{ todoId: number }>());
 export const deleteTodoSuccess = createAction('[Todo] Delete todo success', props<{ todoId: number }>());
